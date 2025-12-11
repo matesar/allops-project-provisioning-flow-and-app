@@ -1,6 +1,6 @@
 # Arquitectura del flujo de alta de proyectos CapEx (ALLOPS)
 
-Este documento describe la arquitectura técnica del flujo de alta de proyectos CapEx en el entorno **ALLOPS**, basado en Power Automate, SharePoint Online, Outlook 365 y Microsoft Teams.
+Este documento describe la arquitectura técnica de los flujos de alta de proyectos CapEx en el entorno **ALLOPS**, basado en Power Automate, SharePoint Online, Outlook 365 y Microsoft Teams.
 
 ---
 
