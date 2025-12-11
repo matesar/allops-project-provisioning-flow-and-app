@@ -33,7 +33,7 @@ El proceso está dividido en dos flujos de Power Automate:
    Ejemplo de nombre: `ALLOPS CapEx Requests`  
    - Origen del disparador del flujo PARENT.  
    - Columnas típicas:
-     - `CountryCompany` (País / Compañía)
+     - `CompanyISOCod` (País)
      - `ProjectName` (Nombre del proyecto)
      - `InternalID` (ID interno CPX o equivalente)
      - `Requester` (Persona que solicita / PM)
