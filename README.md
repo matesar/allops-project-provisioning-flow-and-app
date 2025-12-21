@@ -49,7 +49,7 @@ Tecnologías utilizadas en los flujos:
 - **REST API de SharePoint** (`CreateCopyJobs`) para copiar plantillas de carpetas/archivos.
 - **REST API de Microsoft Graph** para crear canal y publicaciones de bienvenida.
 
-Más detalle técnico en [`flows/+info`](flows/+info).
+Más detalle técnico en [`flows_info`](flows_info).
 
 ---
 
@@ -65,7 +65,7 @@ Frontend para PMs y equipo de ingeniería:
 
 Archivos:
 - `CapexProjectInitApp.msapp` – export de la app de Power Apps.  
-- `powerapps/README.md` – detalle funcional y guía de importación (pendiente de completar).
+- `powerapps/app_info.md` – detalle funcional y guía de importación (pendiente de completar).
 
 ---
 
