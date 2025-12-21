@@ -1,3 +1,7 @@
+## Arquitectura general
+
+Flujo de alto nivel:
+
 1. **Disparador**  
 - Trigger: **When an item is created** en una lista de SharePoint (formulario simple de alta de proyecto).
 - El formulario lo completa el **Project Manager** o responsable del proyecto.
