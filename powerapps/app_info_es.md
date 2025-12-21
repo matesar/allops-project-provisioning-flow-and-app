@@ -112,3 +112,55 @@ https://app.powerbi.com/embed
   ?dashboardId=<DashboardId>
   &tileId=<TileId>
   &filter=<TableName>/<ColumnName> eq '<CPX_ID>'
+```
+Patrón típico dentro de la app:
+
+1. Cuando se selecciona un proyecto, se guarda su CPX ID en una variable, por ejemplo: Set(varCPXId,ThisItem.'CPX ID#');
+
+2. Se construye dinámicamente la URL del tile:
+
+"https://app.powerbi.com/embed?dashboardId=<DashboardId>&tileId=<TileId>&filter="
+& "CapEx_x0020_list/CPX_x0020_ID_x0020__x0023_%20 eq '"
+& varCPXId
+& "'"
+
+3. Esa expresión se asigna a la propiedad Image, HtmlText o la que corresponda en el control usado para mostrar el tile.
+
+>**Notas**:
+>%20, _x0020_, _x0023_, etc. son caracteres codificados que provienen de los nombres de campos de SharePoint / Power BI.
+>Los valores de <TableName> y <ColumnName> deben coincidir exactamente con el dataset usado por el tile.
+>El filtrado funciona sobre tiles, no sobre reportes completos que no estén preparados para recibir filtros vía URL.
+
+---
+
+## 6. UX details and patterns
+
+Algunos patrones usados en la app:
+
+  - Navegación por pestañas
+    - Implementada con una galería horizontal y un elemento seleccionado.
+    - Cada pestaña controla la propiedad Visible de contenedores/formularios de la sección correspondiente.
+  - Dropdowns / lookups
+    - Cuando una columna es desplegable en el formulario de SharePoint, la app usa:
+     .Selected.Value (o similar) para mostrar el valor de texto y guarda el valor subyacente correcto en la lista.
+  - Iconos clicables
+    - Para enlaces que, en SharePoint, están formateados con JSON (iconos en vistas), la app muestra en su lugar:
+      - Un control Image o Icon.
+      - OnSelect = Launch(<corresponding URL column>).
+    - Esto evita mostrar valores dummy (como ".") que solo existen para el formato de la vista en SharePoint.
+
+---
+
+## 7. Limitaciones y notas
+
+  - La app asume que:
+    - Los flujos de Power Automate ya están desplegados y funcionando.
+    - La Projects Master List es la única fuente de verdad y se actualiza a través de los flujos.
+
+  - Cualquier cambio estructural en:
+    - Columnas de la lista,
+    - Estructura de la carpeta de plantilla de proyecto,
+    - Dataset/campos de Power BI,
+  requiere una actualización correspondiente en las fórmulas y bindings de la app.
+
+Para más detalles sobre la lógica de backend (flujos y listas), ver [`flows/flows_info.md`](flows/flows_info.md) and [`docs/architecture.md`](docs/architecture.md).
