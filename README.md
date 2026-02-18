@@ -200,5 +200,5 @@ See the diagram and technical details in [`docs/architecture.md`](docs/architect
 ├── assets/
 │   └── screenshots/                       # PNG/JPG screenshots used in the docs
 └── docs/
-    └── arquitectura.md                    # Technical architecture documentation
+    └── architecture.md                    # Technical architecture documentation
     └── solution_export/
